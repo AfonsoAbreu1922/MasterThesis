@@ -298,6 +298,16 @@ class LIDCIDRIPreprocessedDataLoader(Dataset):
                     self.file_names[data_index],
                     f'Nodule Malignancy StD'].values[0]
             ])
+            
+        return labels
+
+    ''' para luna25:
+        labels = torch.tensor([
+            self.label_dataframe.loc[
+                    self.label_dataframe['file_name'] ==
+                    self.file_names[data_index],
+                    f'label'].values[0] 
+        '''
         # nodule_visual_attribute_mean_scores = torch.tensor([
         #     self.label_dataframe.loc[
         #         self.label_dataframe['file_name'] ==
@@ -323,4 +333,3 @@ class LIDCIDRIPreprocessedDataLoader(Dataset):
         #     statistical_measures_of_lnm_scores=
         #         statistical_measures_of_nodule_malignancy_scores
         # )
-        return labels

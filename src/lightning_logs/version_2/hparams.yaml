@@ -1,0 +1,4 @@
+num_classes: 1
+num_channels: 1
+model_name: efficientnet-b0
+pretrained: true
