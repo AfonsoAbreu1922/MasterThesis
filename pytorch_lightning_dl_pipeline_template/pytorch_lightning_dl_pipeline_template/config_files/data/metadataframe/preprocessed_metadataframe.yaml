@@ -1,0 +1,2 @@
+lidc_idri: ${..lidc_idri_preprocessed_metadataframe}
+luna25: ${..luna25_preprocessed_metadataframe}

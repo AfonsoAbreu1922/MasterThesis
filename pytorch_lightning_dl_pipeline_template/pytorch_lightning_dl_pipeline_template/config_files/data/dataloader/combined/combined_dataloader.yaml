@@ -1,0 +1,16 @@
+apply: True
+dataloaders:
+  lidc_idri: ${...lidc_idri}
+  luna25: ${...luna25}
+dataset: ${...dataset}
+data_split: ${...data_split}
+dataloader_split:
+  training:
+    - lidc_idri
+    - luna25
+  validation:
+    - lidc_idri
+  test:
+    - lidc_idri
+mode: max_size
+seed_value: ${....seed_value}

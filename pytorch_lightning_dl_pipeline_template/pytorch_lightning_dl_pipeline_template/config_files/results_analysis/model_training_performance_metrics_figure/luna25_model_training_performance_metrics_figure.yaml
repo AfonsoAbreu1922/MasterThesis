@@ -1,0 +1,2 @@
+maximum_number_of_epochs: ${...models_and_frameworks.model_and_framework_pipeline.pytorch_lightning_trainer_kwargs.max_epochs}
+number_of_data_folds: ${...data.data_split.number_of_k_folds}

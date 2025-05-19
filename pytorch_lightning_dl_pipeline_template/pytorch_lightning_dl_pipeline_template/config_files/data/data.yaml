@@ -1,0 +1,17 @@
+combined_dataloader:
+  apply: True
+dataset:
+  - name: lidc_idri
+    source: local
+    preprocessing_protocol_number: 1
+  - name: luna25
+    source: local
+    preprocessing_protocol_number: 2
+data_split:
+  number_of_k_folds: 5
+  stratify_label:
+    lidc_idri: spiculation
+    luna25: malignancy
+  test_fraction_of_entire_dataset: 0.2
+  validation_fraction_of_train_set: 0.1
+size: [ 32, 32 ]

@@ -1,0 +1,7 @@
+dataset:
+  name: luna25
+labels:
+  - name: malignancy
+data:
+#  preprocessing_protocol_number: ${....data_preprocessing_protocol_number}
+  type: lung_nodule_bb
