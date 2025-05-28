@@ -26,5 +26,5 @@ paths:
   image_numpy_arrays_dir: ${.....experiment_execution.paths.preprocessed_data_dir_path.luna25}/${....metadataframe.luna25.data.type}_numpy_arrays
 seed_value: ${....seed_value}
 torch_dataloader_kwargs:
-  batch_size: 128
+  batch_size: 32
   num_workers: 0 #4

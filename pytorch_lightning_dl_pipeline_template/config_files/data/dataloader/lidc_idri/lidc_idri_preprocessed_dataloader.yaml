@@ -32,5 +32,5 @@ semantic_characteristic_names: ${...metadataframe.lidc_idri.semantic_characteris
 number_of_lnm_scores: 5
 seed_value: ${....seed_value}
 torch_dataloader_kwargs:
-  batch_size: 64
+  batch_size: 16
   num_workers: 0 #4
