@@ -1,4 +1,4 @@
-./pytorch_lightning_dl_pipeline_template/data/.
+pytorch_lightning_dl_pipeline_template/data/*
 pytorch_lightning_dl_pipeline_template/data/preprocessed/lidc_idri/protocol_1/config_used.yaml
 pytorch_lightning_dl_pipeline_template/data/preprocessed/lidc_idri/protocol_1/execution_datetimes.json
 pytorch_lightning_dl_pipeline_template/data/preprocessed/lidc_idri/protocol_1/protocol_info.md
