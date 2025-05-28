@@ -1,0 +1,37 @@
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/nas-ctm01/homes/ajpinheiro/pytorch_lightning_dl_pipeline_template/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 59, in run_hyperparameter_grid_based_execution_pipeline
+    run_experiment_pipeline(config)
+  File "/nas-ctm01/homes/ajpinheiro/pytorch_lightning_dl_pipeline_template/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 92, in run_experiment_pipeline
+    dataloader = PreprocessedDataLoader(
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/ajpinheiro/pytorch_lightning_dl_pipeline_template/src/modules/data/dataloader/preprocessed_dataloader.py", line 19, in __new__
+    metadataframe = PreprocessedMetadataFrame(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/ajpinheiro/pytorch_lightning_dl_pipeline_template/src/modules/data/metadataframe/preprocessed_metadataframe.py", line 9, in __new__
+    return LIDCIDRIPreprocessedMetaDataFrame(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/ajpinheiro/pytorch_lightning_dl_pipeline_template/src/modules/data/metadataframe/preprocessed_metadataframes/lidc_idri_metadataframe.py", line 11, in __init__
+    self.lung_nodule_metadataframe = pandas.read_csv(
+                                     ^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/ajpinheiro/.conda/envs/luna25_pl_dl_pipeline_template_venv/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/ajpinheiro/.conda/envs/luna25_pl_dl_pipeline_template_venv/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/ajpinheiro/.conda/envs/luna25_pl_dl_pipeline_template_venv/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/ajpinheiro/.conda/envs/luna25_pl_dl_pipeline_template_venv/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/nas-ctm01/homes/ajpinheiro/.conda/envs/luna25_pl_dl_pipeline_template_venv/lib/python3.11/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/nas-ctm01/homes/ajpinheiro/pytorch_lightning_dl_pipeline_template/data/preprocessed/lidc_idri/protocol_1/metadata_csvs/lung_nodule_image_metadata.csv'
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+
+Starting experiment 9 version 1 
+srun: error: 02.ctm-deep-04: task 0: Exited with exit code 1
