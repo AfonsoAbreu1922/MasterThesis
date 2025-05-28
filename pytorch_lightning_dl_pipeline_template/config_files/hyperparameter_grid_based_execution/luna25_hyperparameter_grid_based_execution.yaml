@@ -18,7 +18,7 @@ hyperparameter_grid:
 models_and_frameworks.model_and_framework_pipeline.pytorch_lightning_trainer_kwargs.max_epochs:
     - 25
     - 50
-    - 100
+    - 10
 #  seed_value:
 #    - 1
 #    - 30
