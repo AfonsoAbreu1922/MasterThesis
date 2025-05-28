@@ -1,7 +1,7 @@
 dataset:
   name: lidc_idri
 labels:
-  - name: spiculation
+  - name: malignancy
     mode: binary
     statistical_operation: mean
     stratification_label: True

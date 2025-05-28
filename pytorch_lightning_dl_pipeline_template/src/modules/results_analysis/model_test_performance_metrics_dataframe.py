@@ -18,14 +18,15 @@ class ModelTestPerformanceMetricsDataframe:
             "AUC",
             "Accuracy",
             "Precision",
-            "Sensitivity"
+            "Sensitivity",
+            "Specificity"
         ]
         self.datafold_test_metric_names = [
             "test_auroc",
             "test_accuracy",
             "test_precision",
-            "test_recall",
-
+            "test_sensitivity",
+            "test_specificity"
         ]
         self.dataframe = pandas.DataFrame(
             columns=self.datafold_header_column_names
@@ -165,7 +166,7 @@ class ModelTestPerformanceMetricsDataframe:
         styler = styler.apply(apply_striped_background, axis=1)
         styler = styler.apply(
             highlight_column_best_values,
-            subset=["AUC", "Accuracy", "Precision", "Sensitivity"],
+            subset=["AUC", "Accuracy", "Precision", "Sensitivity", "Specificity"],
             axis=0
         )
 
