@@ -1,0 +1,33 @@
+data:
+  raw:
+    image:
+      transforms:
+        apply: true
+        min_max_clip_hu_values:
+        - -1000
+        - 400
+        min_max_value_range:
+        - 0
+        - 1
+        volume_spacing:
+        - 1
+        - 1
+        - 1
+lung_segmentation_model:
+  model_checkpoint_file_name: lung_segmentation_model_checkpoint.hdf5
+  image_size: 512
+preprocessed_data_generation_protocol_info:
+  Example: null
+  who: Eduardo de Matos Rodrigues
+  centre: CTM
+  group: VCMI
+  what: 2D Lung nodule bounding boxes
+  why: To be used by Afonso Abreu in his master's project
+thoracic_ct_scan_components:
+  lung_segmentation_mask:
+    model_checkpoint_file_name: lung_segmentation_model_checkpoint.hdf5
+    raw_data_loader_transforms: ${...data.raw.image.transforms}
+  lung_nodule:
+    bounding_box:
+      dimension: 2D
+      size: 32
