@@ -10,7 +10,7 @@ dataset:
 data_split:
   number_of_k_folds: 5
   stratify_label:
-    lidc_idri: spiculation
+    lidc_idri: malignancy
     luna25: malignancy
   test_fraction_of_entire_dataset: 0.2
   validation_fraction_of_train_set: 0.1
