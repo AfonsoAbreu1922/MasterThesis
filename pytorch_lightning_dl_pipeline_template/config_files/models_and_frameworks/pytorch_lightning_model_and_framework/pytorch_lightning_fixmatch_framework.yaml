@@ -7,7 +7,7 @@ hyperparameters:
     device: ${..device}
     metadataframe: ${.....data.metadataframe}
     pseudo_label_approval_threshold: 0.95
-    supervised_loss_label: spiculation
+    supervised_loss_label: malignancy
     unsupervised_loss_relative_weight: 0.5
   data_augmenter:
     data_size: ${.....data.size}

@@ -33,4 +33,5 @@ number_of_lnm_scores: 5
 seed_value: ${....seed_value}
 torch_dataloader_kwargs:
   batch_size: 32
-  num_workers: 0 #4
+  num_workers: 4
+  #drop_last: True

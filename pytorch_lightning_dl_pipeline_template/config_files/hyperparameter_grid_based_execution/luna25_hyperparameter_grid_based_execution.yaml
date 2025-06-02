@@ -3,19 +3,18 @@ hyperparameter_combination:
   index: None
   used: None
 hyperparameter_grid:
-  model.pytorch_lightning_model.hyperparameters.optimiser.kwargs.lr:
+
+  models_and_frameworks.pytorch_lightning_model_and_framework.hyperparameters.optimizer.sgd.lr:
     - 0.001
     - 0.0001
     - 0.00001
   data.dataloader.lidc_idri.torch_dataloader_kwargs.batch_size:
-    - 16
     - 32
     - 64
   data.dataloader.luna25.torch_dataloader_kwargs.batch_size:
-    - 64
     - 128
     - 256
-models_and_frameworks.model_and_framework_pipeline.pytorch_lightning_trainer_kwargs.max_epochs:
+  models_and_frameworks.model_and_framework_pipeline.pytorch_lightning_trainer_kwargs.max_epochs:
     - 25
     - 50
     - 100
