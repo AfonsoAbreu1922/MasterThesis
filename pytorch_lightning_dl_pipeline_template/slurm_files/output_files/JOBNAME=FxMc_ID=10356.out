@@ -1,0 +1,538 @@
+
+Starting experiment 7 version 14 
+
+    Running model pipeline for data fold 1...
+/nas-ctm01/homes/ajpinheiro/.conda/envs/luna25_pl_dl_pipeline_template_venv/lib/python3.11/site-packages/lightning_fabric/loggers/csv_logs.py:198: Experiment logs directory /nas-ctm01/homes/ajpinheiro/MasterThesis/pytorch_lightning_dl_pipeline_template/experiment_results/experiment_7/version_14/datafold_1 exists and is not empty. Previous log files in this directory will be deleted when the new ones are saved!
+
+on_validation_epoch_start
+
+validation_step, batch_idx =0
+
+_append_batch_to_accumulated_batches
+[32]
+[32]
+
+validation_step, batch_idx =1
+
+_append_batch_to_accumulated_batches
+[32, 32]
+[32, 32]
+
+on_validation_epoch_end
+
+_concatenate_accumulated_batches
+self.accumulated_batches['labeled_images'].shape = torch.Size([64, 1, 32, 32])
+self.accumulated_batches['labels'].shape = torch.Size([64, 1])
+
+FixMatchLossFunction.forward
+loss = 0.6200119256973267 = 0.6200119256973267
+
+training_step, batch_idx =0
+self.config.dataset_name.labeled = 'lidc_idri'
+self.config.dataset_name.unlabeled = 'luna25'
+labeled_batch is not None, labeled_batch_size = 32
+unlabeled_batch is not None, unlabeled_batch_size = 128
+
+FixMatchLossFunction.forward
+predicted_label_approval_filter.sum() = tensor(1, device='cuda:0')
+loss = 0.6333831548690796 + 0.5 * 0.010881064459681511 = 0.6388236880302429
+metatensor(0.6388, device='cuda:0', grad_fn=<AliasBackward0>)
+effective_batch_size = 32 + 128 * 0.0078125 = 33.0
+
+training_step, batch_idx =1
+self.config.dataset_name.labeled = 'lidc_idri'
+self.config.dataset_name.unlabeled = 'luna25'
+labeled_batch is not None, labeled_batch_size = 32
+unlabeled_batch is not None, unlabeled_batch_size = 128
+
+FixMatchLossFunction.forward
+predicted_label_approval_filter.sum() = tensor(1, device='cuda:0')
+loss = 0.6450567245483398 + 0.5 * 0.011355079710483551 = 0.6507342457771301
+metatensor(0.6507, device='cuda:0', grad_fn=<AliasBackward0>)
+effective_batch_size = 32 + 128 * 0.0078125 = 33.0
+
+training_step, batch_idx =2
+self.config.dataset_name.labeled = 'lidc_idri'
+self.config.dataset_name.unlabeled = 'luna25'
+labeled_batch is not None, labeled_batch_size = 32
+unlabeled_batch is not None, unlabeled_batch_size = 128
+
+FixMatchLossFunction.forward
+predicted_label_approval_filter.sum() = tensor(1, device='cuda:0')
+loss = 0.6238076686859131 + 0.5 * 0.009940061718225479 = 0.6287776827812195
+metatensor(0.6288, device='cuda:0', grad_fn=<AliasBackward0>)
+effective_batch_size = 32 + 128 * 0.0078125 = 33.0
+
+training_step, batch_idx =3
+self.config.dataset_name.labeled = 'lidc_idri'
+self.config.dataset_name.unlabeled = 'luna25'
+labeled_batch is not None, labeled_batch_size = 32
+unlabeled_batch is not None, unlabeled_batch_size = 128
+
+FixMatchLossFunction.forward
+predicted_label_approval_filter.sum() = tensor(1, device='cuda:0')
+loss = 0.6393048763275146 + 0.5 * 0.01130731776356697 = 0.6449585556983948
+metatensor(0.6450, device='cuda:0', grad_fn=<AliasBackward0>)
+effective_batch_size = 32 + 128 * 0.0078125 = 33.0
+
+training_step, batch_idx =4
+self.config.dataset_name.labeled = 'lidc_idri'
+self.config.dataset_name.unlabeled = 'luna25'
+labeled_batch is not None, labeled_batch_size = 32
+unlabeled_batch is not None, unlabeled_batch_size = 128
+
+FixMatchLossFunction.forward
+predicted_label_approval_filter.sum() = tensor(0, device='cuda:0')
+loss = 0.6279140114784241 + 0.5 * 0.0 = 0.6279140114784241
+tensor(0.6279, device='cuda:0', grad_fn=<AddBackward0>)
+effective_batch_size = 32 + 128 * 0.0 = 32.0
+
+training_step, batch_idx =5
+self.config.dataset_name.labeled = 'lidc_idri'
+self.config.dataset_name.unlabeled = 'luna25'
+labeled_batch is not None, labeled_batch_size = 32
+unlabeled_batch is not None, unlabeled_batch_size = 128
+
+FixMatchLossFunction.forward
+predicted_label_approval_filter.sum() = tensor(2, device='cuda:0')
+loss = 0.6268404126167297 + 0.5 * 0.02221926674246788 = 0.63795006275177
+metatensor(0.6380, device='cuda:0', grad_fn=<AliasBackward0>)
+effective_batch_size = 32 + 128 * 0.015625 = 34.0
+
+training_step, batch_idx =6
+self.config.dataset_name.labeled = 'lidc_idri'
+self.config.dataset_name.unlabeled = 'luna25'
+labeled_batch is not None, labeled_batch_size = 32
+unlabeled_batch is not None, unlabeled_batch_size = 128
+
+FixMatchLossFunction.forward
+predicted_label_approval_filter.sum() = tensor(2, device='cuda:0')
+loss = 0.627044677734375 + 0.5 * 0.016743982210755348 = 0.6354166865348816
+metatensor(0.6354, device='cuda:0', grad_fn=<AliasBackward0>)
+effective_batch_size = 32 + 128 * 0.015625 = 34.0
+
+training_step, batch_idx =7
+self.config.dataset_name.labeled = 'lidc_idri'
+self.config.dataset_name.unlabeled = 'luna25'
+labeled_batch is not None, labeled_batch_size = 32
+unlabeled_batch is not None, unlabeled_batch_size = 128
+
+FixMatchLossFunction.forward
+predicted_label_approval_filter.sum() = tensor(3, device='cuda:0')
+loss = 0.6066863536834717 + 0.5 * 0.03338056802749634 = 0.6233766078948975
+metatensor(0.6234, device='cuda:0', grad_fn=<AliasBackward0>)
+effective_batch_size = 32 + 128 * 0.0234375 = 35.0
+
+training_step, batch_idx =8
+self.config.dataset_name.labeled = 'lidc_idri'
+self.config.dataset_name.unlabeled = 'luna25'
+labeled_batch is not None, labeled_batch_size = 32
+unlabeled_batch is not None, unlabeled_batch_size = 128
+
+FixMatchLossFunction.forward
+predicted_label_approval_filter.sum() = tensor(2, device='cuda:0')
+loss = 0.6371215581893921 + 0.5 * 0.0231911763548851 = 0.6487171649932861
+metatensor(0.6487, device='cuda:0', grad_fn=<AliasBackward0>)
+effective_batch_size = 32 + 128 * 0.015625 = 34.0
+
+training_step, batch_idx =9
+self.config.dataset_name.labeled = 'lidc_idri'
+self.config.dataset_name.unlabeled = 'luna25'
+labeled_batch is not None, labeled_batch_size = 32
+unlabeled_batch is not None, unlabeled_batch_size = 128
+
+FixMatchLossFunction.forward
+predicted_label_approval_filter.sum() = tensor(2, device='cuda:0')
+loss = 0.6202595829963684 + 0.5 * 0.021776726469397545 = 0.6311479210853577
+metatensor(0.6311, device='cuda:0', grad_fn=<AliasBackward0>)
+effective_batch_size = 32 + 128 * 0.015625 = 34.0
+
+training_step, batch_idx =10
+self.config.dataset_name.labeled = 'lidc_idri'
+self.config.dataset_name.unlabeled = 'luna25'
+labeled_batch is not None, labeled_batch_size = 32
+unlabeled_batch is not None, unlabeled_batch_size = 128
+
+FixMatchLossFunction.forward
+predicted_label_approval_filter.sum() = tensor(3, device='cuda:0')
+loss = 0.6267002820968628 + 0.5 * 0.03463185578584671 = 0.6440162062644958
+metatensor(0.6440, device='cuda:0', grad_fn=<AliasBackward0>)
+effective_batch_size = 32 + 128 * 0.0234375 = 35.0
+
+training_step, batch_idx =11
+self.config.dataset_name.labeled = 'lidc_idri'
+self.config.dataset_name.unlabeled = 'luna25'
+labeled_batch is not None, labeled_batch_size = 32
+unlabeled_batch is not None, unlabeled_batch_size = 128
+
+FixMatchLossFunction.forward
+predicted_label_approval_filter.sum() = tensor(2, device='cuda:0')
+loss = 0.6420646905899048 + 0.5 * 0.021986085921525955 = 0.6530577540397644
+metatensor(0.6531, device='cuda:0', grad_fn=<AliasBackward0>)
+effective_batch_size = 32 + 128 * 0.015625 = 34.0
+
+training_step, batch_idx =12
+self.config.dataset_name.labeled = 'lidc_idri'
+self.config.dataset_name.unlabeled = 'luna25'
+labeled_batch is not None, labeled_batch_size = 32
+unlabeled_batch is not None, unlabeled_batch_size = 128
+
+FixMatchLossFunction.forward
+predicted_label_approval_filter.sum() = tensor(1, device='cuda:0')
+loss = 0.6410091519355774 + 0.5 * 0.010966140776872635 = 0.6464922428131104
+metatensor(0.6465, device='cuda:0', grad_fn=<AliasBackward0>)
+effective_batch_size = 32 + 128 * 0.0078125 = 33.0
+
+training_step, batch_idx =13
+self.config.dataset_name.labeled = 'lidc_idri'
+self.config.dataset_name.unlabeled = 'luna25'
+labeled_batch is not None, labeled_batch_size = 32
+unlabeled_batch is not None, unlabeled_batch_size = 128
+
+FixMatchLossFunction.forward
+predicted_label_approval_filter.sum() = tensor(0, device='cuda:0')
+loss = 0.6315968036651611 + 0.5 * 0.0 = 0.6315968036651611
+tensor(0.6316, device='cuda:0', grad_fn=<AddBackward0>)
+effective_batch_size = 32 + 128 * 0.0 = 32.0
+
+training_step, batch_idx =14
+self.config.dataset_name.labeled = 'lidc_idri'
+self.config.dataset_name.unlabeled = 'luna25'
+labeled_batch is not None, labeled_batch_size = 32
+unlabeled_batch is not None, unlabeled_batch_size = 128
+
+FixMatchLossFunction.forward
+predicted_label_approval_filter.sum() = tensor(2, device='cuda:0')
+loss = 0.5998438596725464 + 0.5 * 0.029874544590711594 = 0.6147811412811279
+metatensor(0.6148, device='cuda:0', grad_fn=<AliasBackward0>)
+effective_batch_size = 32 + 128 * 0.015625 = 34.0
+
+training_step, batch_idx =15
+self.config.dataset_name.labeled = 'lidc_idri'
+self.config.dataset_name.unlabeled = 'luna25'
+labeled_batch is not None, labeled_batch_size = 32
+unlabeled_batch is not None, unlabeled_batch_size = 128
+
+FixMatchLossFunction.forward
+predicted_label_approval_filter.sum() = tensor(0, device='cuda:0')
+loss = 0.6084304451942444 + 0.5 * 0.0 = 0.6084304451942444
+tensor(0.6084, device='cuda:0', grad_fn=<AddBackward0>)
+effective_batch_size = 32 + 128 * 0.0 = 32.0
+
+training_step, batch_idx =16
+self.config.dataset_name.labeled = 'lidc_idri'
+self.config.dataset_name.unlabeled = 'luna25'
+labeled_batch is not None, labeled_batch_size = 32
+unlabeled_batch is not None, unlabeled_batch_size = 128
+
+FixMatchLossFunction.forward
+predicted_label_approval_filter.sum() = tensor(1, device='cuda:0')
+loss = 0.7018762826919556 + 0.5 * 0.0012930755037814379 = 0.7025228142738342
+metatensor(0.7025, device='cuda:0', grad_fn=<AliasBackward0>)
+effective_batch_size = 32 + 128 * 0.0078125 = 33.0
+
+training_step, batch_idx =17
+self.config.dataset_name.labeled = 'lidc_idri'
+self.config.dataset_name.unlabeled = 'luna25'
+labeled_batch is not None, labeled_batch_size = 32
+unlabeled_batch is not None, unlabeled_batch_size = 128
+
+FixMatchLossFunction.forward
+predicted_label_approval_filter.sum() = tensor(2, device='cuda:0')
+loss = 0.5763185024261475 + 0.5 * 0.017485905438661575 = 0.5850614309310913
+metatensor(0.5851, device='cuda:0', grad_fn=<AliasBackward0>)
+effective_batch_size = 32 + 128 * 0.015625 = 34.0
+
+training_step, batch_idx =18
+self.config.dataset_name.labeled = 'lidc_idri'
+self.config.dataset_name.unlabeled = 'luna25'
+labeled_batch is not None, labeled_batch_size = 32
+unlabeled_batch is not None, unlabeled_batch_size = 128
+
+FixMatchLossFunction.forward
+predicted_label_approval_filter.sum() = tensor(4, device='cuda:0')
+loss = 0.6502761244773865 + 0.5 * 0.04231846705079079 = 0.6714353561401367
+metatensor(0.6714, device='cuda:0', grad_fn=<AliasBackward0>)
+effective_batch_size = 32 + 128 * 0.03125 = 36.0
+
+training_step, batch_idx =19
+self.config.dataset_name.labeled = 'lidc_idri'
+self.config.dataset_name.unlabeled = 'luna25'
+labeled_batch is not None, labeled_batch_size = 32
+unlabeled_batch is not None, unlabeled_batch_size = 128
+
+FixMatchLossFunction.forward
+predicted_label_approval_filter.sum() = tensor(1, device='cuda:0')
+loss = 0.6913868188858032 + 0.5 * 0.0019028033129870892 = 0.692338228225708
+metatensor(0.6923, device='cuda:0', grad_fn=<AliasBackward0>)
+effective_batch_size = 32 + 128 * 0.0078125 = 33.0
+
+training_step, batch_idx =20
+self.config.dataset_name.labeled = 'lidc_idri'
+self.config.dataset_name.unlabeled = 'luna25'
+labeled_batch is not None, labeled_batch_size = 32
+unlabeled_batch is not None, unlabeled_batch_size = 128
+
+FixMatchLossFunction.forward
+predicted_label_approval_filter.sum() = tensor(2, device='cuda:0')
+loss = 0.6478313207626343 + 0.5 * 0.01388535462319851 = 0.654774010181427
+metatensor(0.6548, device='cuda:0', grad_fn=<AliasBackward0>)
+effective_batch_size = 32 + 128 * 0.015625 = 34.0
+
+training_step, batch_idx =21
+self.config.dataset_name.labeled = 'lidc_idri'
+self.config.dataset_name.unlabeled = 'luna25'
+labeled_batch is not None, labeled_batch_size = 32
+unlabeled_batch is not None, unlabeled_batch_size = 128
+
+FixMatchLossFunction.forward
+predicted_label_approval_filter.sum() = tensor(2, device='cuda:0')
+loss = 0.6058096885681152 + 0.5 * 0.021780895069241524 = 0.6167001128196716
+metatensor(0.6167, device='cuda:0', grad_fn=<AliasBackward0>)
+effective_batch_size = 32 + 128 * 0.015625 = 34.0
+
+training_step, batch_idx =22
+self.config.dataset_name.labeled = 'lidc_idri'
+self.config.dataset_name.unlabeled = 'luna25'
+labeled_batch is not None, labeled_batch_size = 32
+unlabeled_batch is not None, unlabeled_batch_size = 128
+
+FixMatchLossFunction.forward
+predicted_label_approval_filter.sum() = tensor(1, device='cuda:0')
+loss = 0.6271549463272095 + 0.5 * 0.010059334337711334 = 0.632184624671936
+metatensor(0.6322, device='cuda:0', grad_fn=<AliasBackward0>)
+effective_batch_size = 32 + 128 * 0.0078125 = 33.0
+
+training_step, batch_idx =23
+self.config.dataset_name.labeled = 'lidc_idri'
+self.config.dataset_name.unlabeled = 'luna25'
+labeled_batch is not None, labeled_batch_size = 32
+unlabeled_batch is not None, unlabeled_batch_size = 128
+
+FixMatchLossFunction.forward
+predicted_label_approval_filter.sum() = tensor(2, device='cuda:0')
+loss = 0.6129580736160278 + 0.5 * 0.022714529186487198 = 0.6243153214454651
+metatensor(0.6243, device='cuda:0', grad_fn=<AliasBackward0>)
+effective_batch_size = 32 + 128 * 0.015625 = 34.0
+
+training_step, batch_idx =24
+self.config.dataset_name.labeled = 'lidc_idri'
+self.config.dataset_name.unlabeled = 'luna25'
+labeled_batch is not None, labeled_batch_size = 32
+unlabeled_batch is not None, unlabeled_batch_size = 128
+
+FixMatchLossFunction.forward
+predicted_label_approval_filter.sum() = tensor(4, device='cuda:0')
+loss = 0.6235572695732117 + 0.5 * 0.04798480123281479 = 0.6475496888160706
+metatensor(0.6475, device='cuda:0', grad_fn=<AliasBackward0>)
+effective_batch_size = 32 + 128 * 0.03125 = 36.0
+
+training_step, batch_idx =25
+self.config.dataset_name.labeled = 'lidc_idri'
+self.config.dataset_name.unlabeled = 'luna25'
+labeled_batch is not None, labeled_batch_size = 32
+unlabeled_batch is not None, unlabeled_batch_size = 128
+
+FixMatchLossFunction.forward
+predicted_label_approval_filter.sum() = tensor(2, device='cuda:0')
+loss = 0.65183025598526 + 0.5 * 0.020738165825605392 = 0.6621993184089661
+metatensor(0.6622, device='cuda:0', grad_fn=<AliasBackward0>)
+effective_batch_size = 32 + 128 * 0.015625 = 34.0
+
+training_step, batch_idx =26
+self.config.dataset_name.labeled = 'lidc_idri'
+self.config.dataset_name.unlabeled = 'luna25'
+labeled_batch is not None, labeled_batch_size = 17
+unlabeled_batch is not None, unlabeled_batch_size = 128
+
+FixMatchLossFunction.forward
+predicted_label_approval_filter.sum() = tensor(6, device='cuda:0')
+loss = 0.6869261264801025 + 0.5 * 0.06143728643655777 = 0.7176447510719299
+metatensor(0.7176, device='cuda:0', grad_fn=<AliasBackward0>)
+effective_batch_size = 17 + 128 * 0.046875 = 23.0
+
+training_step, batch_idx =27
+self.config.dataset_name.labeled = 'lidc_idri'
+self.config.dataset_name.unlabeled = 'luna25'
+labeled_batch is None, labeled_batch_size = 0
+unlabeled_batch is not None, unlabeled_batch_size = 128
+
+FixMatchLossFunction.forward
+predicted_label_approval_filter.sum() = tensor(2, device='cuda:0')
+loss = 0.5 * 0.02252119965851307 = 0.011260599829256535
+metatensor(0.0113, device='cuda:0', grad_fn=<AliasBackward0>)
+effective_batch_size = 0 + 128 * 0.015625 = 2.0
+
+training_step, batch_idx =28
+self.config.dataset_name.labeled = 'lidc_idri'
+self.config.dataset_name.unlabeled = 'luna25'
+labeled_batch is None, labeled_batch_size = 0
+unlabeled_batch is not None, unlabeled_batch_size = 128
+
+FixMatchLossFunction.forward
+predicted_label_approval_filter.sum() = tensor(1, device='cuda:0')
+loss = 0.5 * 0.009482333436608315 = 0.004741166718304157
+metatensor(0.0047, device='cuda:0', grad_fn=<AliasBackward0>)
+effective_batch_size = 0 + 128 * 0.0078125 = 1.0
+
+training_step, batch_idx =29
+self.config.dataset_name.labeled = 'lidc_idri'
+self.config.dataset_name.unlabeled = 'luna25'
+labeled_batch is None, labeled_batch_size = 0
+unlabeled_batch is not None, unlabeled_batch_size = 128
+
+FixMatchLossFunction.forward
+predicted_label_approval_filter.sum() = tensor(2, device='cuda:0')
+loss = 0.5 * 0.014907578937709332 = 0.007453789468854666
+metatensor(0.0075, device='cuda:0', grad_fn=<AliasBackward0>)
+effective_batch_size = 0 + 128 * 0.015625 = 2.0
+
+training_step, batch_idx =30
+self.config.dataset_name.labeled = 'lidc_idri'
+self.config.dataset_name.unlabeled = 'luna25'
+labeled_batch is None, labeled_batch_size = 0
+unlabeled_batch is not None, unlabeled_batch_size = 128
+
+FixMatchLossFunction.forward
+predicted_label_approval_filter.sum() = tensor(1, device='cuda:0')
+loss = 0.5 * 0.012268804013729095 = 0.006134402006864548
+metatensor(0.0061, device='cuda:0', grad_fn=<AliasBackward0>)
+effective_batch_size = 0 + 128 * 0.0078125 = 1.0
+
+training_step, batch_idx =31
+self.config.dataset_name.labeled = 'lidc_idri'
+self.config.dataset_name.unlabeled = 'luna25'
+labeled_batch is None, labeled_batch_size = 0
+unlabeled_batch is not None, unlabeled_batch_size = 128
+
+FixMatchLossFunction.forward
+predicted_label_approval_filter.sum() = tensor(1, device='cuda:0')
+loss = 0.5 * 0.011193614453077316 = 0.005596807226538658
+metatensor(0.0056, device='cuda:0', grad_fn=<AliasBackward0>)
+effective_batch_size = 0 + 128 * 0.0078125 = 1.0
+
+training_step, batch_idx =32
+self.config.dataset_name.labeled = 'lidc_idri'
+self.config.dataset_name.unlabeled = 'luna25'
+labeled_batch is None, labeled_batch_size = 0
+unlabeled_batch is not None, unlabeled_batch_size = 128
+
+FixMatchLossFunction.forward
+predicted_label_approval_filter.sum() = tensor(1, device='cuda:0')
+loss = 0.5 * 0.010437583550810814 = 0.005218791775405407
+metatensor(0.0052, device='cuda:0', grad_fn=<AliasBackward0>)
+effective_batch_size = 0 + 128 * 0.0078125 = 1.0
+
+training_step, batch_idx =33
+self.config.dataset_name.labeled = 'lidc_idri'
+self.config.dataset_name.unlabeled = 'luna25'
+labeled_batch is None, labeled_batch_size = 0
+unlabeled_batch is not None, unlabeled_batch_size = 128
+
+FixMatchLossFunction.forward
+predicted_label_approval_filter.sum() = tensor(1, device='cuda:0')
+loss = 0.5 * 0.01051730290055275 = 0.005258651450276375
+metatensor(0.0053, device='cuda:0', grad_fn=<AliasBackward0>)
+effective_batch_size = 0 + 128 * 0.0078125 = 1.0
+
+training_step, batch_idx =34
+self.config.dataset_name.labeled = 'lidc_idri'
+self.config.dataset_name.unlabeled = 'luna25'
+labeled_batch is None, labeled_batch_size = 0
+unlabeled_batch is not None, unlabeled_batch_size = 85
+
+FixMatchLossFunction.forward
+predicted_label_approval_filter.sum() = tensor(1, device='cuda:0')
+loss = 0.5 * 0.015707464888691902 = 0.007853732444345951
+metatensor(0.0079, device='cuda:0', grad_fn=<AliasBackward0>)
+effective_batch_size = 0 + 85 * 0.011764705882352941 = 1.0
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/nas-ctm01/homes/ajpinheiro/MasterThesis/pytorch_lightning_dl_pipeline_template/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 54, in run_hyperparameter_grid_based_execution_pipeline
+    run_experiment_pipeline(config)
+  File "/nas-ctm01/homes/ajpinheiro/MasterThesis/pytorch_lightning_dl_pipeline_template/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 125, in run_experiment_pipeline
+    model_and_framework_pipeline.train_model()
+  File "/nas-ctm01/homes/ajpinheiro/MasterThesis/pytorch_lightning_dl_pipeline_template/src/modules/models_and_frameworks/model_and_framework_pipeline.py", line 54, in train_model
+    self.pytorch_lightning_trainer.fit(
+  File "/nas-ctm01/homes/ajpinheiro/.conda/envs/luna25_pl_dl_pipeline_template_venv/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 544, in fit
+    call._call_and_handle_interrupt(
+  File "/nas-ctm01/homes/ajpinheiro/.conda/envs/luna25_pl_dl_pipeline_template_venv/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/ajpinheiro/.conda/envs/luna25_pl_dl_pipeline_template_venv/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 580, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/nas-ctm01/homes/ajpinheiro/.conda/envs/luna25_pl_dl_pipeline_template_venv/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 989, in _run
+    results = self._run_stage()
+              ^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/ajpinheiro/.conda/envs/luna25_pl_dl_pipeline_template_venv/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 1035, in _run_stage
+    self.fit_loop.run()
+  File "/nas-ctm01/homes/ajpinheiro/.conda/envs/luna25_pl_dl_pipeline_template_venv/lib/python3.11/site-packages/pytorch_lightning/loops/fit_loop.py", line 202, in run
+    self.advance()
+  File "/nas-ctm01/homes/ajpinheiro/.conda/envs/luna25_pl_dl_pipeline_template_venv/lib/python3.11/site-packages/pytorch_lightning/loops/fit_loop.py", line 359, in advance
+    self.epoch_loop.run(self._data_fetcher)
+  File "/nas-ctm01/homes/ajpinheiro/.conda/envs/luna25_pl_dl_pipeline_template_venv/lib/python3.11/site-packages/pytorch_lightning/loops/training_epoch_loop.py", line 137, in run
+    self.on_advance_end(data_fetcher)
+  File "/nas-ctm01/homes/ajpinheiro/.conda/envs/luna25_pl_dl_pipeline_template_venv/lib/python3.11/site-packages/pytorch_lightning/loops/training_epoch_loop.py", line 285, in on_advance_end
+    self.val_loop.run()
+  File "/nas-ctm01/homes/ajpinheiro/.conda/envs/luna25_pl_dl_pipeline_template_venv/lib/python3.11/site-packages/pytorch_lightning/loops/utilities.py", line 182, in _decorator
+    return loop_run(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/ajpinheiro/.conda/envs/luna25_pl_dl_pipeline_template_venv/lib/python3.11/site-packages/pytorch_lightning/loops/evaluation_loop.py", line 141, in run
+    return self.on_run_end()
+           ^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/ajpinheiro/.conda/envs/luna25_pl_dl_pipeline_template_venv/lib/python3.11/site-packages/pytorch_lightning/loops/evaluation_loop.py", line 264, in on_run_end
+    self.trainer._logger_connector.log_eval_end_metrics(all_logged_outputs)
+  File "/nas-ctm01/homes/ajpinheiro/.conda/envs/luna25_pl_dl_pipeline_template_venv/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/logger_connector/logger_connector.py", line 142, in log_eval_end_metrics
+    self.log_metrics(metrics)
+  File "/nas-ctm01/homes/ajpinheiro/.conda/envs/luna25_pl_dl_pipeline_template_venv/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/logger_connector/logger_connector.py", line 110, in log_metrics
+    logger.save()
+  File "/nas-ctm01/homes/ajpinheiro/.conda/envs/luna25_pl_dl_pipeline_template_venv/lib/python3.11/site-packages/lightning_utilities/core/rank_zero.py", line 41, in wrapped_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/ajpinheiro/.conda/envs/luna25_pl_dl_pipeline_template_venv/lib/python3.11/site-packages/lightning_fabric/loggers/csv_logs.py", line 149, in save
+    self.experiment.save()
+  File "/nas-ctm01/homes/ajpinheiro/.conda/envs/luna25_pl_dl_pipeline_template_venv/lib/python3.11/site-packages/pytorch_lightning/loggers/csv_logs.py", line 64, in save
+    return super().save()
+           ^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/ajpinheiro/.conda/envs/luna25_pl_dl_pipeline_template_venv/lib/python3.11/site-packages/lightning_fabric/loggers/csv_logs.py", line 231, in save
+    self._rewrite_with_new_header(self.metrics_keys)
+  File "/nas-ctm01/homes/ajpinheiro/.conda/envs/luna25_pl_dl_pipeline_template_venv/lib/python3.11/site-packages/lightning_fabric/loggers/csv_logs.py", line 256, in _rewrite_with_new_header
+    writer.writerows(metrics)
+  File "/nas-ctm01/homes/ajpinheiro/.conda/envs/luna25_pl_dl_pipeline_template_venv/lib/python3.11/csv.py", line 157, in writerows
+    return self.writer.writerows(map(self._dict_to_list, rowdicts))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/ajpinheiro/.conda/envs/luna25_pl_dl_pipeline_template_venv/lib/python3.11/csv.py", line 149, in _dict_to_list
+    raise ValueError("dict contains fields not in fieldnames: "
+ValueError: dict contains fields not in fieldnames: 'train_loss', 'test_accuracy', 'test_sensitivity', 'test_auroc', 'test_precision', 'test_specificity', 'unlabeled_data_utilization'
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+
+on_validation_epoch_start
+
+validation_step, batch_idx =0
+
+_append_batch_to_accumulated_batches
+[32]
+[32]
+
+validation_step, batch_idx =1
+
+_append_batch_to_accumulated_batches
+[32, 32]
+[32, 32]
+
+validation_step, batch_idx =2
+
+_append_batch_to_accumulated_batches
+[32, 32, 31]
+[32, 32, 31]
+
+on_validation_epoch_end
+
+_concatenate_accumulated_batches
+self.accumulated_batches['labeled_images'].shape = torch.Size([95, 1, 32, 32])
+self.accumulated_batches['labels'].shape = torch.Size([95, 1])
+
+FixMatchLossFunction.forward
+loss = 0.8250991106033325 = 0.8250991106033325
+srun: error: 02.ctm-deep-04: task 0: Exited with exit code 1

@@ -16,6 +16,9 @@ class FixMatchLossFunction(torch.nn.Module):
         self.tau = self.config.pseudo_label_approval_threshold
 
     def forward(self, logits, labels, pipeline_step="training"):
+        if 'from_weakly_augmented_unlabeled_images' not in logits:
+            print("Logits does not contain 'from_weakly_augmented_unlabeled_images'")
+
         print("\nFixMatchLossFunction.forward")
         supervised_loss = None
         if logits['from_weakly_augmented_labeled_images'] is not None:
@@ -73,10 +76,13 @@ class FixMatchLossFunction(torch.nn.Module):
             self,
             logits_from_weakly_augmented_unlabeled_images
     ):
+        if logits_from_weakly_augmented_unlabeled_images is None:
+            return torch.tensor(0.0) # ou outro valor neutro conforme o contexto
+
         predicted_label_probabilities = torch.nn.functional.softmax(
-            logits_from_weakly_augmented_unlabeled_images,
-            dim=1
+            logits_from_weakly_augmented_unlabeled_images, dim=1
         )
+
         predicted_label_approval_filter = torch.any(
             predicted_label_probabilities >= self.tau, 1
         )
