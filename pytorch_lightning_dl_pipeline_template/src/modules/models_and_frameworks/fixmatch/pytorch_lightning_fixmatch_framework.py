@@ -209,9 +209,14 @@ class PyTorchLightningFixMatchFramework(pytorch_lightning.LightningModule):
             unlabeled_images,
             training_step
     ):
+#        print("unlabeled_images is None?", unlabeled_images is None)
+#        print("training_step?", training_step)
+
         logits = dict(
             from_non_augmented_labeled_images=None,
-            from_weakly_augmented_labeled_images=None
+            from_weakly_augmented_labeled_images=None,
+            from_weakly_augmented_unlabeled_images=None,
+            from_strongly_augmented_unlabeled_images=None
         )
 
         if labeled_images is not None:
