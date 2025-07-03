@@ -281,3 +281,5 @@ class LIDCIDRIPreprocessedDataLoader(Dataset):
         self.load_data = kwargs['config'].load.data
         self.load_labels = kwargs['config'].load.labels
         self.load_metadata = kwargs['config'].load.metadata
+
+        print("Tamanho LIDC (N):", len(kwargs['file_names']))
