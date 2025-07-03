@@ -29,3 +29,4 @@ torch_dataloader_kwargs:
   batch_size: 128
   num_workers: 4
   #drop_last: True
+dataset_size: 0 

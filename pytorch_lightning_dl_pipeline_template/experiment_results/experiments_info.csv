@@ -5,3 +5,11 @@ Experiment ID,Who ran it?,When was it run?,What was run?
 8,Afonso Abreu,2025-06-04 09:45,Hyperparameter optimization
 9,Afonso Abreu,2025-06-05 07:01,Hyperparameter optimization
 10,Afonso Abreu,2025-06-08 03:15,Hyperparameter optimization
+11,Afonso Abreu,2025-06-11 04:05,luna25_different_dataset_sizes
+12,Afonso Abreu,2025-06-11 23:48,testing_higher_epochs
+13,Afonso Abreu,2025-06-12 07:08,testing_higher_epochs
+14,Afonso Abreu,2025-06-13 00:05,sting_different_learning_rates
+15,Afonso Abreu,2025-06-18 10:24,testing_efficient_net
+16,Afonso Abreu,2025-06-21 11:45,testing_ResNet18
+17,Afonso Abreu,2025-06-21 20:57,testing_ResNet18
+18,Afonso Abreu,2025-06-25 17:49,testing_ConvNext

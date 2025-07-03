@@ -1,5 +1,6 @@
-from torchvision.models import efficientnet_b0, resnet18, resnet34, resnet50
+from torchvision.models import efficientnet_b0, resnet18, resnet34, resnet50, convnext_tiny
 import torch
+import torch.nn as nn
 
 
 class FixMatchModel:
@@ -12,12 +13,25 @@ class FixMatchModel:
             return ResNet34Model(config)
         elif config.name == "ResNet-50":
             return ResNet50Model(config)
+        elif config.name == "ConvNext":
+            return  ConvNextModel(config)
         else:
             raise ValueError(
                 f"Invalid model name: {config.name}. "
                 f"Supported model names are 'EfficientNet', "
                 f"'ResNet-18', 'ResNet-34', and 'ResNet-50'."
             )
+
+class ConvNextModel(torch.nn.Module):
+    def __init__(self, config):
+        super(ConvNextModel, self).__init__()
+        self.model = convnext_tiny()
+        self.model.features[0][0] = nn.Conv2d(1, 96, kernel_size=4, stride=4)
+        self.model.classifier[2] = nn.Linear(768, 2)
+       
+    def forward(self, model_input):
+        model_output = self.model(model_input)
+        return model_output
 
 class EfficientNetModel(torch.nn.Module):
     def __init__(self, config):

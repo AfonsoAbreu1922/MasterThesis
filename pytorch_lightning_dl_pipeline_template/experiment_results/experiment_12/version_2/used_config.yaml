@@ -1,0 +1,592 @@
+data:
+  combined_dataloader:
+    apply: true
+  dataset:
+  - name: lidc_idri
+    source: remote
+    preprocessing_protocol_number: 1
+  - name: luna25
+    source: remote
+    preprocessing_protocol_number: 2
+  data_split:
+    number_of_k_folds: 5
+    stratify_label:
+      lidc_idri: malignancy
+      luna25: malignancy
+    test_fraction_of_entire_dataset: 0.2
+    validation_fraction_of_train_set: 0.1
+  size:
+  - 32
+  - 32
+  dataloader:
+    combined:
+      apply: true
+      dataloaders:
+        lidc_idri:
+          data:
+            augmentation:
+              apply: false
+              augmented_to_original_data_ratio: 2
+              parameters:
+                number_of_augmentations: 3
+                random_rotation_degrees: 10
+                random_translation_fraction: 0.1
+                random_brightness_intensity_factor: 0.3
+                random_contrast_intensity_factor: 0.3
+                random_gaussian_blur:
+                  kernel_size:
+                  - 3
+                  - 3
+                  sigma:
+                  - 0.1
+                  - 1.0
+                random_gaussian_noise_variance: 0.001
+                random_elastic_alpha: 10.0
+                random_elastic_sigma: 5.0
+          load:
+            data:
+              mask: false
+            metadata:
+              file_name: false
+            labels: true
+          paths:
+            image_numpy_arrays_dir: /nas-ctm01/datasets/private/LUCAS/LIDC_IDRI/preprocessed_data/protocol_1/image_numpy_arrays
+            mask_numpy_arrays_dir: /nas-ctm01/datasets/private/LUCAS/LIDC_IDRI/preprocessed_data/protocol_1/mask_numpy_arrays
+          input_data_size:
+          - 1
+          - 32
+          - 32
+          semantic_characteristic_names:
+          - subtlety
+          - internal_structure
+          - calcification
+          - sphericity
+          - margin
+          - lobulation
+          - spiculation
+          - texture
+          - malignancy
+          number_of_lnm_scores: 5
+          seed_value: 900
+          torch_dataloader_kwargs:
+            batch_size: 32
+            num_workers: 4
+        luna25:
+          data:
+            augmentation:
+              apply: false
+              augmented_to_original_data_ratio: 2
+              parameters:
+                number_of_augmentations: 3
+                random_rotation_degrees: 10
+                random_translation_fraction: 0.1
+                random_brightness_intensity_factor: 0.3
+                random_contrast_intensity_factor: 0.3
+                random_gaussian_blur:
+                  kernel_size:
+                  - 3
+                  - 3
+                  sigma:
+                  - 0.1
+                  - 1.0
+                random_gaussian_noise_variance: 0.001
+                random_elastic_alpha: 10.0
+                random_elastic_sigma: 5.0
+          load:
+            metadata:
+              file_name: false
+            labels: false
+          paths:
+            image_numpy_arrays_dir: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/luna25_challenge/preprocessed_data/protocol_2/lung_nodule_bb_numpy_arrays
+          seed_value: 900
+          torch_dataloader_kwargs:
+            batch_size: 128
+            num_workers: 4
+          dataset_size: 850
+      dataset:
+      - name: lidc_idri
+        source: remote
+        preprocessing_protocol_number: 1
+      - name: luna25
+        source: remote
+        preprocessing_protocol_number: 2
+      data_split:
+        number_of_k_folds: 5
+        stratify_label:
+          lidc_idri: malignancy
+          luna25: malignancy
+        test_fraction_of_entire_dataset: 0.2
+        validation_fraction_of_train_set: 0.1
+      dataloader_split:
+        training:
+        - lidc_idri
+        - luna25
+        validation:
+        - lidc_idri
+        test:
+        - lidc_idri
+      mode: max_size
+      seed_value: 900
+    lidc_idri:
+      data:
+        augmentation:
+          apply: false
+          augmented_to_original_data_ratio: 2
+          parameters:
+            number_of_augmentations: 3
+            random_rotation_degrees: 10
+            random_translation_fraction: 0.1
+            random_brightness_intensity_factor: 0.3
+            random_contrast_intensity_factor: 0.3
+            random_gaussian_blur:
+              kernel_size:
+              - 3
+              - 3
+              sigma:
+              - 0.1
+              - 1.0
+            random_gaussian_noise_variance: 0.001
+            random_elastic_alpha: 10.0
+            random_elastic_sigma: 5.0
+      load:
+        data:
+          mask: false
+        metadata:
+          file_name: false
+        labels: true
+      paths:
+        image_numpy_arrays_dir: /nas-ctm01/datasets/private/LUCAS/LIDC_IDRI/preprocessed_data/protocol_1/image_numpy_arrays
+        mask_numpy_arrays_dir: /nas-ctm01/datasets/private/LUCAS/LIDC_IDRI/preprocessed_data/protocol_1/mask_numpy_arrays
+      input_data_size:
+      - 1
+      - 32
+      - 32
+      semantic_characteristic_names:
+      - subtlety
+      - internal_structure
+      - calcification
+      - sphericity
+      - margin
+      - lobulation
+      - spiculation
+      - texture
+      - malignancy
+      number_of_lnm_scores: 5
+      seed_value: 900
+      torch_dataloader_kwargs:
+        batch_size: 32
+        num_workers: 4
+    luna25:
+      data:
+        augmentation:
+          apply: false
+          augmented_to_original_data_ratio: 2
+          parameters:
+            number_of_augmentations: 3
+            random_rotation_degrees: 10
+            random_translation_fraction: 0.1
+            random_brightness_intensity_factor: 0.3
+            random_contrast_intensity_factor: 0.3
+            random_gaussian_blur:
+              kernel_size:
+              - 3
+              - 3
+              sigma:
+              - 0.1
+              - 1.0
+            random_gaussian_noise_variance: 0.001
+            random_elastic_alpha: 10.0
+            random_elastic_sigma: 5.0
+      load:
+        metadata:
+          file_name: false
+        labels: false
+      paths:
+        image_numpy_arrays_dir: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/luna25_challenge/preprocessed_data/protocol_2/lung_nodule_bb_numpy_arrays
+      seed_value: 900
+      torch_dataloader_kwargs:
+        batch_size: 128
+        num_workers: 4
+      dataset_size: 850
+  metadataframe:
+    lidc_idri:
+      dataset:
+        name: lidc_idri
+      labels:
+      - name: malignancy
+        mode: binary
+        statistical_operation: mean
+        stratification_label: true
+        filter_out_average_score: true
+      minimum_number_of_annotations_per_nodule: 3
+      semantic_characteristic:
+        names:
+        - subtlety
+        - internal_structure
+        - calcification
+        - sphericity
+        - margin
+        - lobulation
+        - spiculation
+        - texture
+        - malignancy
+        score_counts:
+          subtlety: 5
+          internal_structure: 4
+          calcification: 6
+          sphericity: 5
+          margin: 5
+          lobulation: 5
+          spiculation: 5
+          texture: 5
+          malignancy: 5
+      use_mode_for_internal_structure_and_calcification: false
+    luna25:
+      dataset:
+        name: luna25
+      labels:
+      - name: malignancy
+      data:
+        type: lung_nodule_bb
+experiment_execution:
+  ids:
+    experiment_id: 12
+    experiment_version_id: 2
+  info:
+    who: Afonso Abreu
+    what: testing_higher_epochs
+  paths:
+    experiment_dir_path: /nas-ctm01/homes/ajpinheiro/MasterThesis/pytorch_lightning_dl_pipeline_template/experiment_results/experiment_12
+    experiment_version_dir_path: /nas-ctm01/homes/ajpinheiro/MasterThesis/pytorch_lightning_dl_pipeline_template/experiment_results/experiment_12/version_2
+    preprocessed_data_dir_path:
+      lidc_idri: /nas-ctm01/datasets/private/LUCAS/LIDC_IDRI/preprocessed_data/protocol_1
+      luna25: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/luna25_challenge/preprocessed_data/protocol_2
+    python_project_dir_path: /nas-ctm01/homes/ajpinheiro/MasterThesis/pytorch_lightning_dl_pipeline_template
+hyperparameter_grid_based_execution:
+  apply: true
+  hyperparameter_combination:
+    index: 2
+    used:
+      models_and_frameworks.pytorch_lightning_model_and_framework.hyperparameters.optimizer.sgd.lr: 0.001
+      data.dataloader.lidc_idri.torch_dataloader_kwargs.batch_size: 32
+      data.dataloader.luna25.torch_dataloader_kwargs.batch_size: 128
+      models_and_frameworks.model_and_framework_pipeline.pytorch_lightning_trainer_kwargs.max_epochs: 150
+      data.dataloader.luna25.dataset_size: 850
+  hyperparameter_grid:
+    models_and_frameworks.pytorch_lightning_model_and_framework.hyperparameters.optimizer.sgd.lr:
+    - 0.001
+    data.dataloader.lidc_idri.torch_dataloader_kwargs.batch_size:
+    - 32
+    data.dataloader.luna25.torch_dataloader_kwargs.batch_size:
+    - 128
+    models_and_frameworks.model_and_framework_pipeline.pytorch_lightning_trainer_kwargs.max_epochs:
+    - 100
+    - 150
+    - 200
+    data.dataloader.luna25.dataset_size:
+    - 850
+models_and_frameworks:
+  model_or_framework_id: FxMc
+  model_or_framework_name: FixMatch
+  model_and_framework_pipeline:
+    model_or_framework_id: FxMc
+    model_or_framework_name: FixMatch
+    callbacks:
+      model_checkpoints:
+      - monitor: val_auroc
+        filename: mod=FxMc-exp=12-ver=2-{epoch}-var={val_auroc:.3f}
+        mode: max
+        save_top_k: 1
+      - monitor: val_loss
+        filename: mod=FxMc-exp=12-ver=2-{epoch}-var={val_loss:.3f}
+        mode: min
+        save_top_k: 1
+      - filename: mod=FxMc-exp=12-ver=2-{epoch}-var=last_epoch
+      model_early_stoppings:
+      - monitor: val_auroc
+        patience: 5
+        mode: max
+        verbose: false
+    enable_logging: true
+    enable_model_early_stopping: false
+    finalization:
+      delete_model_checkpoints: true
+      save_used_data_file_names: true
+    pytorch_lightning_model_and_framework:
+      model_or_framework_id: FxMc
+      model_or_framework_name: FixMatch
+      hyperparameters:
+        criterion:
+          apply_weights: true
+          labeled_dataset_name: lidc_idri
+          device: cuda
+          metadataframe:
+            lidc_idri:
+              dataset:
+                name: lidc_idri
+              labels:
+              - name: malignancy
+                mode: binary
+                statistical_operation: mean
+                stratification_label: true
+                filter_out_average_score: true
+              minimum_number_of_annotations_per_nodule: 3
+              semantic_characteristic:
+                names:
+                - subtlety
+                - internal_structure
+                - calcification
+                - sphericity
+                - margin
+                - lobulation
+                - spiculation
+                - texture
+                - malignancy
+                score_counts:
+                  subtlety: 5
+                  internal_structure: 4
+                  calcification: 6
+                  sphericity: 5
+                  margin: 5
+                  lobulation: 5
+                  spiculation: 5
+                  texture: 5
+                  malignancy: 5
+              use_mode_for_internal_structure_and_calcification: false
+            luna25:
+              dataset:
+                name: luna25
+              labels:
+              - name: malignancy
+              data:
+                type: lung_nodule_bb
+          pseudo_label_approval_threshold: 0.95
+          supervised_loss_label: malignancy
+          unsupervised_loss_relative_weight: 0.5
+        data_augmenter:
+          data_size:
+          - 32
+          - 32
+          weak_data_augmenter:
+            data_size:
+            - 32
+            - 32
+            random_flip:
+              probability: 0.5
+            random_translate:
+              maximum_fraction: 0.125
+              fill: -1
+          strong_data_augmenter:
+            data_size:
+            - 32
+            - 32
+            number_of_transformations: 2
+            auto_contrast:
+              min_max_pixel_values:
+              - -1
+              - 1
+            random_brightness:
+              factor_range:
+              - 0.7
+              - 1.3
+            random_contrast:
+              factor_range:
+              - 0.7
+              - 1.3
+            random_elastic_transform:
+              alpha: 50.0
+              sigma: 5.0
+              fill: -1
+            random_erasing:
+              scale:
+              - 0.000976562
+              - 0.000976562
+              ratio:
+              - 1.0
+              - 1.0
+              value: -1
+            random_gaussian_blur:
+              kernel_size: 3
+              sigma_range:
+              - 0.5
+              - 1.0
+            random_posterize:
+              bit_range:
+              - 4
+              - 8
+            random_rotation:
+              degrees: 30
+              fill: -1
+            random_shear:
+              fraction_range: 0.3
+            random_solarize:
+              threshold_range:
+              - 0
+              - 1
+            random_translate:
+              maximum_fraction: 0.2
+              fill: -1
+        dataset_name:
+          labeled: lidc_idri
+          unlabeled: luna25
+        device: cuda
+        model:
+          name: EfficientNet
+          number_of_classes: 2
+        optimizer:
+          lr_scheduler:
+            max_epochs: 150
+            number_of_training_steps_per_epoch: 27
+          sgd:
+            lr: 0.001
+            momentum: 0.9
+            nesterov: True,
+            weight_decay: 0.0005
+    pytorch_lightning_trainer_kwargs:
+      accelerator: gpu
+      enable_checkpointing: true
+      enable_model_summary: false
+      enable_progress_bar: false
+      log_every_n_steps: 1
+      min_epochs: 0
+      max_epochs: 150
+  pytorch_lightning_model_and_framework:
+    model_or_framework_id: FxMc
+    model_or_framework_name: FixMatch
+    hyperparameters:
+      criterion:
+        apply_weights: true
+        labeled_dataset_name: lidc_idri
+        device: cuda
+        metadataframe:
+          lidc_idri:
+            dataset:
+              name: lidc_idri
+            labels:
+            - name: malignancy
+              mode: binary
+              statistical_operation: mean
+              stratification_label: true
+              filter_out_average_score: true
+            minimum_number_of_annotations_per_nodule: 3
+            semantic_characteristic:
+              names:
+              - subtlety
+              - internal_structure
+              - calcification
+              - sphericity
+              - margin
+              - lobulation
+              - spiculation
+              - texture
+              - malignancy
+              score_counts:
+                subtlety: 5
+                internal_structure: 4
+                calcification: 6
+                sphericity: 5
+                margin: 5
+                lobulation: 5
+                spiculation: 5
+                texture: 5
+                malignancy: 5
+            use_mode_for_internal_structure_and_calcification: false
+          luna25:
+            dataset:
+              name: luna25
+            labels:
+            - name: malignancy
+            data:
+              type: lung_nodule_bb
+        pseudo_label_approval_threshold: 0.95
+        supervised_loss_label: malignancy
+        unsupervised_loss_relative_weight: 0.5
+      data_augmenter:
+        data_size:
+        - 32
+        - 32
+        weak_data_augmenter:
+          data_size:
+          - 32
+          - 32
+          random_flip:
+            probability: 0.5
+          random_translate:
+            maximum_fraction: 0.125
+            fill: -1
+        strong_data_augmenter:
+          data_size:
+          - 32
+          - 32
+          number_of_transformations: 2
+          auto_contrast:
+            min_max_pixel_values:
+            - -1
+            - 1
+          random_brightness:
+            factor_range:
+            - 0.7
+            - 1.3
+          random_contrast:
+            factor_range:
+            - 0.7
+            - 1.3
+          random_elastic_transform:
+            alpha: 50.0
+            sigma: 5.0
+            fill: -1
+          random_erasing:
+            scale:
+            - 0.000976562
+            - 0.000976562
+            ratio:
+            - 1.0
+            - 1.0
+            value: -1
+          random_gaussian_blur:
+            kernel_size: 3
+            sigma_range:
+            - 0.5
+            - 1.0
+          random_posterize:
+            bit_range:
+            - 4
+            - 8
+          random_rotation:
+            degrees: 30
+            fill: -1
+          random_shear:
+            fraction_range: 0.3
+          random_solarize:
+            threshold_range:
+            - 0
+            - 1
+          random_translate:
+            maximum_fraction: 0.2
+            fill: -1
+      dataset_name:
+        labeled: lidc_idri
+        unlabeled: luna25
+      device: cuda
+      model:
+        name: EfficientNet
+        number_of_classes: 2
+      optimizer:
+        lr_scheduler:
+          max_epochs: 150
+          number_of_training_steps_per_epoch: 27
+        sgd:
+          lr: 0.001
+          momentum: 0.9
+          nesterov: True,
+          weight_decay: 0.0005
+results_analysis:
+  model_test_performance_metrics_dataframe:
+    monitored_variables:
+    - val_auroc
+    - val_loss
+    - last_epoch
+  model_training_performance_metrics_figure:
+    maximum_number_of_epochs: 150
+    number_of_data_folds: 5
+seed_value: 900

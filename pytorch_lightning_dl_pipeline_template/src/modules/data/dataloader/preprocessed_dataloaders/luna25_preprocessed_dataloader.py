@@ -221,6 +221,12 @@ class LUNA25PreprocessedDataLoader(Dataset):
         return labels
 
     def _setup(self, **kwargs):
+
+        original_size = len(kwargs['file_names'])
+        print("Tamanho total original do Luna25 (N):", original_size)
+
+        kwargs['file_names'] = kwargs['file_names'][:kwargs['config'].dataset_size]
+        
         self.config = kwargs['config']
 
         self.data_transformer = dict(
