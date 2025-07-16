@@ -13,3 +13,8 @@ Experiment ID,Who ran it?,When was it run?,What was run?
 16,Afonso Abreu,2025-06-21 11:45,testing_ResNet18
 17,Afonso Abreu,2025-06-21 20:57,testing_ResNet18
 18,Afonso Abreu,2025-06-25 17:49,testing_ConvNext
+19,Afonso Abreu,2025-07-03 20:20,testing_threshold_0.99
+20,Afonso Abreu,2025-07-04 19:57,testing_threshold_0.90
+21,Afonso Abreu,2025-07-06 18:47,testing_threshold_0.85
+22,Afonso Abreu,2025-07-07 19:00,testing_threshold_0.80
+23,Afonso Abreu,2025-07-14 23:18,testing_2D_64x64

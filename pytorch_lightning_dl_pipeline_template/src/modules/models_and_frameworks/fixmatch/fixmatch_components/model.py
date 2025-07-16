@@ -43,7 +43,10 @@ class EfficientNetModel(torch.nn.Module):
         )
 
     def forward(self, model_input):
-        model_output = self.model(model_input.repeat(1, 3, 1, 1))
+        if model_input.shape[1] == 1:  # If input is grayscale
+            model_output = self.model(model_input.repeat(1, 3, 1, 1))
+        else:
+            model_output = self.model(model_input)
         return model_output
 
 class ResNet18Model(torch.nn.Module):

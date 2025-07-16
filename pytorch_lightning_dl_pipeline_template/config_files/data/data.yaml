@@ -3,10 +3,10 @@ combined_dataloader:
 dataset:
   - name: lidc_idri
     source: remote
-    preprocessing_protocol_number: 1
+    preprocessing_protocol_number: 4
   - name: luna25
     source: remote
-    preprocessing_protocol_number: 2
+    preprocessing_protocol_number: 4
 data_split:
   number_of_k_folds: 5
   stratify_label:

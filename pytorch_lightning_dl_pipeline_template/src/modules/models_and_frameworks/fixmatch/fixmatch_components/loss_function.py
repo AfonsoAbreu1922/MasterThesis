@@ -10,10 +10,13 @@ class FixMatchLossFunction(torch.nn.Module):
         super().__init__()
         self.config = config
 
+        self.classification_loss_type = self.config.classification_loss_type
         self.class_weights = \
             self._get_class_weights(experiment_execution_paths)
         self.lambda_u = self.config.unsupervised_loss_relative_weight
         self.tau = self.config.pseudo_label_approval_threshold
+        self.eta = self.config.eta
+        self.iota = self.config.iota
 
     def forward(self, logits, labels, pipeline_step="training"):
         if 'from_weakly_augmented_unlabeled_images' not in logits:
@@ -60,16 +63,75 @@ class FixMatchLossFunction(torch.nn.Module):
             print(f"loss = {supervised_loss} = {loss}")
             return loss
 
+    @staticmethod
+    def _compute_dice_loss(logits, ground_truth_labels, epsilon = 1e-6):
+        predicted_class_probabilities = torch.sigmoid(logits)
+        intersection = (
+            predicted_class_probabilities * ground_truth_labels
+        ).sum()
+        union = predicted_class_probabilities.sum() + ground_truth_labels.sum()
+        dice_losses = 1 - (2. * intersection + epsilon) / (union + epsilon)
+        dice_loss = dice_losses.mean()
+        return dice_loss
+
+    def _compute_focal_loss(self, logits, ground_truth_labels):
+        bce_losses = F.binary_cross_entropy_with_logits(
+            input=logits,
+            target=ground_truth_labels,
+            reduction='none'
+        )
+        predicted_class_probabilities = torch.sigmoid(logits)
+        true_class_predicted_probabilities = torch.where(
+            ground_truth_labels == 1.0,
+            predicted_class_probabilities,
+            1 - predicted_class_probabilities
+        )
+        label_weights = torch.where(
+            ground_truth_labels == 1.0,
+            self._class_weights[1],
+            self._class_weights[0]
+        )
+        focal_losses = (
+            (1 - true_class_predicted_probabilities) ** self.iota
+            * bce_losses * label_weights
+        )
+        focal_loss = focal_losses.mean()
+        return focal_loss
+
     def _get_supervised_loss(
             self,
             logits_from_weakly_augmented_labeled_images,
             labels
     ):
-        supervised_loss = binary_cross_entropy_with_logits(
-            input=logits_from_weakly_augmented_labeled_images,
-            target=one_hot(labels.squeeze().long(), num_classes=2).float(),
-            weight=self.class_weights
-        )
+        logits = logits_from_weakly_augmented_labeled_images
+        ground_truth_labels = one_hot(labels.squeeze().long(), num_classes=2).float()
+
+        if self.classification_loss_type == "BCE":
+            bce_loss = binary_cross_entropy_with_logits(
+                input=logits,
+                target=ground_truth_labels,
+                weight=self.class_weights
+            )
+            supervised_loss = bce_loss
+        elif self.classification_loss_type == "BCE + Dice":
+            bce_loss = binary_cross_entropy_with_logits(
+                input=logits,
+                target=ground_truth_labels,
+                weight=self.class_weights
+            )
+            dice_loss = \
+                self._compute_dice_loss(logits, ground_truth_labels)
+            supervised_loss = bce_loss + self.eta * dice_loss
+        elif self.classification_loss_type == "Focal":
+            focal_loss = \
+                self._compute_focal_loss(logits, ground_truth_labels)
+            supervised_loss = focal_loss
+        else:
+            raise ValueError(
+                f"Invalid classification loss type: "
+                f"{self.classification_loss_type}. "
+                f"Supported types are 'BCE', 'BCE + Dice' and 'Focal'"
+            )
         return supervised_loss
 
     def _get_unlabeled_data_utilization(
