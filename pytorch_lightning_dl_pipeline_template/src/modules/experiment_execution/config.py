@@ -35,7 +35,7 @@ class ExperimentExecutionConfig:
                 for folder in Path(experiments_dir_path).iterdir()
                 if folder.is_dir()
             ]
-            experiment_id = experiment_ids[-1] + 1
+            experiment_id = max(experiment_ids) + 1
         config.experiment_execution.ids.experiment_id = experiment_id
 
     @staticmethod
