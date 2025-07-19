@@ -18,3 +18,8 @@ Experiment ID,Who ran it?,When was it run?,What was run?
 21,Afonso Abreu,2025-07-06 18:47,testing_threshold_0.85
 22,Afonso Abreu,2025-07-07 19:00,testing_threshold_0.80
 23,Afonso Abreu,2025-07-17 17:51,testing_64x64_2D_32x32_25D_64x64_25D
+24,Afonso Abreu,2025-07-17 20:15,testing_BCE+Dice_eta_025
+25,Afonso Abreu,2025-07-17 23:12,testing_BCE+Dice_eta_050
+26,Afonso Abreu,2025-07-18 04:14,testing_BCE+Dice_eta_1
+27,Afonso Abreu,2025-07-18 16:14,testing_BCE+Dice_eta_2
+28,Afonso Abreu,2025-07-18 18:28,testing_BCE+Dice_eta_5
