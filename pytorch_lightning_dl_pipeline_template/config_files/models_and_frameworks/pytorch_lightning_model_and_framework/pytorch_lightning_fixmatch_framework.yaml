@@ -9,9 +9,9 @@ hyperparameters:
     pseudo_label_approval_threshold: 0.95
     supervised_loss_label: malignancy
     unsupervised_loss_relative_weight: 0.5
-    classification_loss_type: BCE + Dice # Options: BCE, BCE + Dice, Focal
-    eta: 5 # Options: 0.25, 0.5, 1, 2, 5
-    iota: 2 # Options: 1, 3
+    classification_loss_type: Focal # Options: BCE, BCE + Dice, Focal
+    eta: 2 # Options: 0.25, 0.5, 1, 2, 5
+    iota: 3 # Options: 1, 2, 3
   data_augmenter:
     data_size: ${.....data.size}
     weak_data_augmenter:

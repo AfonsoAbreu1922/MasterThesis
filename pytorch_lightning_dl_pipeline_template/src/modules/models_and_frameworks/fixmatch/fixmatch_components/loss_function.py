@@ -1,5 +1,6 @@
 from torch.nn.functional import binary_cross_entropy_with_logits, one_hot
 import torch
+import torch.nn.functional as F
 
 from src.modules.data.metadataframe.preprocessed_metadataframe \
     import PreprocessedMetadataFrame
@@ -88,8 +89,8 @@ class FixMatchLossFunction(torch.nn.Module):
         )
         label_weights = torch.where(
             ground_truth_labels == 1.0,
-            self._class_weights[1],
-            self._class_weights[0]
+            self.class_weights[1],
+            self.class_weights[0]
         )
         focal_losses = (
             (1 - true_class_predicted_probabilities) ** self.iota
