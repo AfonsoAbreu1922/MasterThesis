@@ -29,13 +29,15 @@ hyperparameter_grid:
   
   data.dataloader.luna25.dataset_size:
     - 0
-#    - 850
-#    - 1700
-#    - 2550
-#    - 3400
-#    - 4250
+    - 850
+    - 1700
+    - 2550
+    - 3400
+    - 4250
 
 #  seed_value:
-#    - 1
+    - 1
+    - 10
+    - 20 
 #    - 30
 #    - 900
