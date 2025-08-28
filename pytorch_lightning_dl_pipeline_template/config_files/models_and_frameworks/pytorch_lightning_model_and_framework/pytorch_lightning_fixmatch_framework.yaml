@@ -58,7 +58,7 @@ hyperparameters:
     unlabeled: luna25
   device: cuda
   model:
-    name: EfficientNet
+    name: ResNet-18
     number_of_classes: 2
   optimizer:
     lr_scheduler:

@@ -19,7 +19,7 @@ callbacks:
 enable_logging: True
 enable_model_early_stopping: False
 finalization:
-  delete_model_checkpoints: True
+  delete_model_checkpoints: False
   save_used_data_file_names: True
 pytorch_lightning_model_and_framework: ${..pytorch_lightning_model_and_framework}
 pytorch_lightning_trainer_kwargs:

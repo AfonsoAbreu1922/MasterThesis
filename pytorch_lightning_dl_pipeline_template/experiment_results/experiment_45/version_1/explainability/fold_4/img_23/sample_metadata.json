@@ -1,0 +1,16 @@
+{
+  "file_base": "img_23",
+  "fold_idx": 4,
+  "batch_idx": 7,
+  "img_idx": 23,
+  "supervised_prediction": 0,
+  "semisupervised_prediction": 1,
+  "label": 0,
+  "timestamp": "2025-08-27T23:32:48.319808",
+  "input_shape": [
+    1,
+    1,
+    32,
+    32
+  ]
+}
